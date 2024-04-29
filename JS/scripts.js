@@ -43,16 +43,6 @@ if (closeButton) {
     closeButton.addEventListener("click", closeWindowAndRedirect);
 }
 
-// script.js
-
-// const toggleBtn = document.querySelector('.toggle-btn');
-// const sidebar = document.querySelector('.sidebar');
-// const content = document.querySelector('.content');
-
-// toggleBtn.addEventListener('click', () => {
-//     sidebar.classList.toggle('active');
-//     content.classList.toggle('active');
-// });
 
 // Dashboard Js
 

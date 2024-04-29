@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  
+  <script src="sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="sweetalert2.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
   <link rel="stylesheet" href="css/Styles.css">
   <link rel="icon" type="image/x-icon" href="/images/Walletlogoonly.png">
@@ -41,9 +42,9 @@
       <p>
         Already have an account?<span class="register-link" id="login">Login</span>
       </p>
-      
+
     </div>
-    
+
     <div class="signup-form center" id="loginForm">
       <div onclick="closeWindowAndRedirect()" class="close-button">🗙</div>
       <h1>Login </h1>
@@ -52,7 +53,7 @@
       <input class="form-input" type="email" id="txtEmail" placeholder="Email" />
       <!-- <label for="">Password:</label> -->
       <input class="form-input" type="password" id="txtPass" placeholder="Password" />
-      <button class="btn-switch" onclick="mylogin()">Login</button>
+      <button type="submit" class="btn-switch" onclick="mylogin()">Login</button>
       <p>
         Don't have account yet?<span class="register-link" id="signup">Register</span>
       </p>
@@ -63,7 +64,7 @@
   <!-- login over -->
   <script src="JS/scripts.js"></script>
   <script>
-    function mylogin() {
+    async function mylogin() {
       const email = document.getElementById("txtEmail").value;
       const pass = document.getElementById("txtPass").value;
       if (!email) {
@@ -73,15 +74,38 @@
         alert("Please write password");
         return true;
       }
-      const getEmail = localStorage.getItem('email');
-      const getPwd = localStorage.getItem('pwd');
-      if (String(email).trim() === String(getEmail).trim() && String(pass).trim() === String(getPwd).trim()) {
-        location.href = 'Dashboard.html';
-      } else {
-        alert("Invalid your email/password");
-      }
+      //const getEmail = localStorage.getItem('email');
+      //const getPwd = localStorage.getItem('pwd');
+      //if (String(email).trim() === String(getEmail).trim() && String(pass).trim() === String(getPwd).trim()) {
+      // location.href = 'Dashboard.html';
+      await fetch('http://localhost:3000/api/login', {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          sPassword: pass
+        }),
+      }).then(res => {
+        console.log('res :>> ', res);
+        if (res.status === 200) {
+          location.href = 'Dashboard.html'
+        }
+        if (res.status === 400) {
+          alert(res.message)
+        }
+      }).catch(err => {
+        console.log('err :>> ', err);
+        alert(err)
+      })
+      //} else {
+      // alert("Invalid your email/password");
+      // }
     }
-    function register() {
+    async function register() {
+      const sName = document.getElementById("sName").value;
       const email = document.getElementById("sEmail").value;
       const sPassword = document.getElementById("sPassword").value;
       const sConfirmPassword = document.getElementById("sConfirmPassword").value;
@@ -99,12 +123,40 @@
       if (String(sPassword).trim() === String(sConfirmPassword).trim()) {
         localStorage.setItem('email', email);
         localStorage.setItem('pwd', sPassword);
-        location.href = 'login.html'
+        //location.href = 'login.html'
+        const param = {
+          email: email,
+          sPassword: sPassword,
+          sName: sName,
+        }
+        await fetch('http://localhost:3000/api/signup', {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(param),
+        }).then(res => {
+          console.log('res :>> ', res);
+          if (res.status === 200) {
+            location.href = 'login.html'
+          }
+          if (res.status === 400) {
+            alert(res.message)
+          }
+        }).catch(err => {
+          console.log('err :>> ', err);
+          alert(err)
+        })
       } else {
         alert("Your password miss match");
         return true;
       }
+
     }
+
+
+
   </script>
 </body>
 

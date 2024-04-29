@@ -36,50 +36,6 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Get the total amount from the input field
-// var totalAmount = parseFloat(document.getElementById('Number').value);
-
-// // Get all the checkboxes or input fields for people involved
-// var checkboxes = document.getElementById('Member');
-
-// // Count the number of people selected
-// var numberOfPeople = 0;
-// checkboxes.forEach(function(checkbox) {
-//     if (checkbox.checked) {
-//         numberOfPeople++;
-//     }
-// });
-
-// // Calculate the amount each person has to pay
-// var amountPerPerson = totalAmount / numberOfPeople;
-
-// // Display the amount each person has to pay
-// checkboxes.forEach(function(checkbox) {
-//     if (checkbox.checked) {
-//         var personName = checkbox.value; // Get the person's name from the checkbox value
-//         alert(personName + ' has to pay: $' + amountPerPerson.toFixed(2));
-//     }
-// });
-
-// var total = document.getElementById("Number");
-// var Member = document.getElementById("Member");
-
-// const value = total / Member;
-
-// document.getElementById("Number2").innerHTML = value;
-
-// function calculateDivision() {
-//     var numerator = parseFloat(document.getElementById('Number').value);
-//     var denominator = parseFloat(document.getElementById('Number3').value);
-
-//     if (denominator !== 0) {
-//         var result = numerator / denominator;
-//         document.getElementById('resultInput').value = result;
-//     } else {
-//         document.getElementById('resultInput').value = "Cannot divide by zero!";
-//     }
-// }
-
 // Get the input elements
 var numeratorInput = document.getElementById('Number');
 var denominatorInput = document.getElementById('Number3');

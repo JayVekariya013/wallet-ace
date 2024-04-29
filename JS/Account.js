@@ -35,3 +35,28 @@ window.addEventListener('resize', () => {
         searchForm.classList.remove('show');
     }
 });
+
+fetch('http://localhost:3000/api/account', {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        cardHolderName,
+        cardNumber
+    })
+}).then(res => {
+    console.log('res :>> ', res);
+    if (res.status === 200) {
+        // location.href = 'Account.html'
+    }
+    if (res.status === 400) {
+        alert(res.message)
+    }
+
+}).catch(err => {
+    console.log('err :>> ', err);
+    alert(err)
+})
+

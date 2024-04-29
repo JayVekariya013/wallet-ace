@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Account</title>
     <link rel="icon" type="image/x-icon" href="/images/Walletlogoonly.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,6 +18,7 @@
             align-items: center;
             min-height: 100vh;
         }
+
         .close-button {
             position: absolute;
             top: 20px;
@@ -41,7 +44,9 @@
             display: block;
         }
 
-        input[type="text"], input[type="number"], input[type="date"] {
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
@@ -62,6 +67,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="card-form">
         <div onclick="closeWindowAndRedirect()" class="close-button">🗙</div>
@@ -73,57 +79,32 @@
         </script>
         <h2 style="text-align: center;">Add Details</h2>
         <br>
-        <form>
+        <form action="" method="" id="dataForm">
             <div class="form-group">
                 <div class="form-group">
-                    <label for="cardHolderName">Account Name :</label>
+                    <label for="cardHolderName">Account Name:</label>
                     <br>
-                    <input type="text" id="cardHolderName" name="cardHolderName" placeholder="Name" style="width: 280px;" required>
+                    <input type="text" id="cardHolderName" name="cardHolderName" placeholder="Name"
+                        style="width: 280px;" required>
                     <br>
                     <br>
                 </div>
-                <label for="cardNumber">Initial Balance :</label>
+                <label for="cardNumber">Initial Balance:</label>
                 <br>
-                <input type="text" id="cardNumber" name="cardNumber" placeholder="Rupees" style="width: 280px;" required>
-                <br>
-                <br>
-            </div>
-
-            <div class="form-group">
-                <label>Include in stats : </label>
-                <br>
-                <select name="stats" id="stats" style="width: 300px;height: 40px;">
-                    <option value="">Yes</option>
-                    <option value="">No</option>
-                </select>
-            </div>
-
-            <!-- <div class="form-group">
-                <label for="cardHolderName">Bank IFSC code :</label>
-                <br>
-                <input type="text" id="cardHolderName" name="cardHolderName" placeholder="IFSC code" style="width: 280px;" required>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="Rupees" style="width: 280px;"
+                    required>
                 <br>
                 <br>
             </div>
-            <div class="form-group">
-                <label for="cardHolderName">CardCVV Number :</label>
-                <br>
-                <input type="text" id="cardHolderName" name="cardHolderName" placeholder="Last Three Digite" style="width: 280px;" required>
-                <br>
-                <br>
-            </div>
-
-            <div class="form-group">
-                <label for="expiryDate">Expiry Date :</label>
-                <br>
-                <input type="date" id="expiryDate" name="expiryDate" style="width: 280px;" required>
-                <br>
-                <br>
-            </div> -->
-            <div class="form-actions">
-                <button type="submit">Create Account</button>
+            <div class="form-actions" >
+                <button id="btn" >Create Account </button>
             </div>
         </form>
     </div>
 </body>
+<script src="./JS/alert.js">
+
+    
+</script>
+
 </html>

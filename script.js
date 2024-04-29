@@ -1,13 +1,15 @@
+const { text } = require("body-parser");
+
 let login = document.getElementById('login');
 let signup = document.getElementById('signup');
 let shade = document.getElementById('switch');
 
-login.addEventListener('click', function(){
+login.addEventListener('click', function () {
     shade.classList.remove('toRight');
     shade.classList.add('toLeft');
 });
 
-signup.addEventListener('click', function(){
+signup.addEventListener('click', function () {
     shade.classList.remove('toLeft');
     shade.classList.add('toRight');
 });
@@ -126,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = document.getElementById("sPassword").value;
         const cpassword = document.getElementById("sConfirmPassword").value;
 
-        if(password==cpassword){
+        if (password == cpassword) {
             try {
                 const response = await fetch('http://127.0.0.1:3000/api/signup', {
                     method: 'POST',
@@ -135,24 +137,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     },
                     body: JSON.stringify({ username, email, password })
                 });
-    
+
                 const data = await response.json();
-    
+
                 if (response.status === 201) {
-                    message.textContent = data.message;
-                    message.classList.remove('hidden');
-                } else {
-                    message.textContent = 'Signup failed. Please try again.';
-                    message.classList.remove('hidden');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                message.textContent = 'An error occurred. Please try again later.';
+                   
+                message.textContent = data.message;
+                message.classList.remove('hidden');
+            } else {
+                message.textContent = 'Signup failed. Please try again.';
                 message.classList.remove('hidden');
             }
+        } catch (error) {
+            console.error('Error:', error);
+            message.textContent = 'An error occurred. Please try again later.';
+            message.classList.remove('hidden');
         }
-        else{
-            message.textContent = 'Please chech both passwords.';
+    }
+        else {
+            message.textContent = 'Please check both passwords.';
             message.classList.remove('hidden');
         }
         

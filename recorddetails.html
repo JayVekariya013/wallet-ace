@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/RecordDetail.css">
+    <link rel="icon" type="image/x-icon" href="/images/Walletlogoonly.png">
+    <title>Budget</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="index.html" class="logo">
+            <i class='bx bx-code-alt'></i>
+            <div class="logo-name"><span>Wallet</span>Ace</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="Dashboard.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="Account.html"><i class='bx bx-store-alt'></i>Accounts</a></li>
+            <li class=""><a href="split.html"><i class='bx bx-analyse'></i>Split Bills</a></li>
+            <li ><a href="budget.html" onclick="mybudget()"><i class='bx bx-cog'></i>Analysis</a></li>
+            <li class="active"><a href="recorddetails.html" onclick="myprofile()"><i class='bx bx-group'></i>Records</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout" onclick="mylogout()">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="images/logo.png">
+            </a>
+        </nav>
+        <main>
+            <div class="header">
+                <div class="left">
+                    <!-- <h1>Dashboard</h1> -->
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                User
+                            </a></li>
+                        /
+                        <li class="active">Record Details</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Insights -->
+            <ul class="insights">
+                <li>
+                    <h2 id="currentMonth">Expense Records</h2>
+    <table id="expensesTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Payment Method</th>
+            </tr>
+        </thead>
+        <tbody id="expensesTableBody">
+            <!-- Table rows will be dynamically populated here -->
+        </tbody>
+    </table>
+    <br>
+
+    <div class="button">
+        <button id="previousBtn">Previous</button>
+        <span id="currentMonthName"></span>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        let currentMonth = new Date().getMonth();
+
+
+        function fetchExpenses() {
+            fetch(`http://localhost:3000/api/expenses?month=${currentMonth}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch expenses data.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const expensesTableBody = document.getElementById('expensesTableBody');
+                    expensesTableBody.innerHTML = ''; // Clear previous data
+                    data.forEach(expense => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${new Date(expense.date).toLocaleDateString()}</td>
+                            <td>${expense.amount}</td>
+                            <td>${expense.category}</td>
+                            <td>${expense.description}</td>
+                            <td>${expense.paymentAccount}</td>
+                        `;
+                        expensesTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching expenses data:', error);
+                });
+        }
+
+        function updateCurrentMonthName() {
+            const currentMonthNameElement = document.getElementById('currentMonthName');
+            const currentDate = new Date();
+            currentDate.setMonth(currentDate.getMonth() + currentPage);
+            currentMonthNameElement.textContent = currentDate.toLocaleString('en-us', { month: 'long' });
+        }
+
+        document.getElementById('previousBtn').addEventListener('click', () => {
+            currentPage--;
+            fetchExpenses();
+            updateCurrentMonthName();
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentPage++;
+            fetchExpenses();
+            updateCurrentMonthName();
+        });
+
+        // Initial fetch and update
+        fetchExpenses();
+        updateCurrentMonthName();
+    </script>
+                </li>
+            </ul>
+        </main>
+    </div>
+
+
+
+
+    <script src="JS/script.js"></script>
+</body>
+
+</html>

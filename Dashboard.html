@@ -12,9 +12,8 @@
     <link rel="icon" type="image/x-icon" href="/images/Walletlogoonly.png">
     <title>Wallet Ace</title>
     <style>
-        table,td,th,tr{
-            border: solid balck 1px;
-            border-radius: 1px;
+        table {
+            border: 1px;
         }
     </style>
 </head>
@@ -32,7 +31,7 @@
             <li><a href="Account.html" onclick="myaccount()"><i class='bx bx-store-alt'></i>Accounts</a></li>
             <li><a href="Split.html" onclick="mysplit()"><i class='bx bx-analyse'></i>Split Bills</a></li>
             <li><a href="budget.html"><i class='bx bx-cog'></i>Analysis</a></li>
-            <!-- <li><a href="profile.html" onclick="myprofile()"><i class='bx bx-group'></i>Profile</a></li> -->
+            <li><a href="recorddetails.html" onclick="myprofile()"><i class='bx bx-group'></i>Records</a></li>
         </ul>
         <ul class="side-menu">
             <li>
@@ -83,13 +82,15 @@
 
             <!-- Insights -->
             <ul class="insights">
-                <li>
-                    <!-- <i class='bx bx-calendar-check'></i> -->
+                <li style="justify-content: center;">
+                    <!-- <i class='bx bx-show-alt'></i> -->
+                    <i class='bx bx-plus-circle'></i><br>
+                    <!-- <h4>Create Account</h4> -->
                     <span class="info">
-                        <h3>
-                            Cash
-                        </h3>
-                        <p> 5000/- </p>
+                        <h4>
+                            <a href="create.html"> Add Account</a>
+                        </h4>
+                        <!-- <p style="text-align: center;"></p> -->
                     </span>
                 </li>
                 <li style="justify-content: center;">
@@ -98,7 +99,7 @@
                     <!-- <h4>Create Account</h4> -->
                     <span class="info">
                         <h4>
-                            <a href="create.html"> Add Account</a>
+                            <a href="addExpenses.html"> Add Expenses</a>
                         </h4>
                         <!-- <p style="text-align: center;"></p> -->
                     </span>
@@ -114,7 +115,6 @@
                         <i class='bx bx-filter'></i>
                         <i class='bx bx-search'></i>
                     </div>
-
                     <table id="expensesTable">
                         <thead>
                             <tr>
@@ -129,46 +129,6 @@
                             <!-- Table rows will be dynamically populated here -->
                         </tbody>
                     </table>
-
-                    <!-- <table>
-                        <thead>
-                            <tr>
-                                <th>User</th>
-                                <th>Amount</th>
-                                <th>Order Date</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <img src="images/iron man dp.jpg">
-                                    <p>Pruthu Vanara</p>
-                                </td>
-                                <td>5000/-</td>
-                                <td>14-08-2023</td>
-                                <td><span class="status completed">Completed</span></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="images/Pig DP.png">
-                                    <p>Jenil Vekariya</p>
-                                </td>
-                                <td>8396</td>
-                                <td>14-08-2023</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="images/cheems dp.jpg">
-                                    <p>Akhil Viradiya</p>
-                                </td>
-                                <td>7736</td>
-                                <td>14-08-2023</td>
-                                <td><span class="status process">Processing</span></td>
-                            </tr>
-                        </tbody>
-                    </table> -->
                 </div>
 
                 <!-- Reminders -->
@@ -226,10 +186,11 @@
         }
         function mylogout() {
             localStorage.clear();
-            location.href = '/index.html';
+            location.href = '/login.html';
         }
+
         // Fetch expenses data from the server
-        fetch('http://localhost:3000/api/getExpenses')
+        fetch('http://localhost:3000/api/expenses')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch expenses data.');

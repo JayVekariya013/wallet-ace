@@ -380,11 +380,17 @@ body{
     margin-top: 36px;
 }
 
+h2{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
 .content main .insights li{
     padding: 20px;
+    width: 90%;
     background: var(--light-primary );
     border-radius: 20px;
-    display: flex;
+    display: grid;
     /* justify-content: center; */
     align-items: center;
     grid-gap: 6px;

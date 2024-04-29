@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Expense</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,7 +43,8 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
-        #box{
+
+        #box {
             background-color: #ace7e9;
             border: solid black 1px;
             border-radius: 7px;
@@ -82,13 +85,27 @@
                 <!-- Add more payment account options as needed -->
             </select>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" id="submit">
         </form>
     </div>
 
 
 
     <script>
+
+        document.getElementById('submit').addEventListener("click", function () {
+            Swal.fire({
+                title: 'Success',
+                text: 'You will be redirected to the Home page shortly.',
+                icon: 'success',
+                timer: 1000, // Adjust the timer as needed
+                showConfirmButton: false
+            }).then(() => {
+                // Redirect to the home page
+                window.location.href = '/Dashboard.html'; // Replace '/' with the URL of your home page
+            })
+        })
+
         document.getElementById("expenseForm").addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent the form from submitting normally
 

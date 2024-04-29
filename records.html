@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Records</title>
+    <style>
+        table {
+            width: 80%;
+            border: solid black 1px;
+            border-collapse: collapse;
+            margin-left: 10%;
+        }
+
+        td,
+        tr {
+            border: solid black 1px;
+            border-collapse: collapse;
+            padding: 15px;
+            width: 20%;
+            text-align: center;
+            background-color: rgb(221, 239, 240);
+
+        }
+
+        .button {
+            margin-left: 46%;
+        }
+
+        thead,
+        th {
+            border: solid black 1px;
+            border-collapse: collapse;
+            padding: 20px;
+            width: 20%;
+            text-align: center;
+            background-color: rgb(136, 185, 187);
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="currentMonth">Expense Records</h2>
+    <table id="expensesTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>Payment Method</th>
+            </tr>
+        </thead>
+        <tbody id="expensesTableBody">
+            <!-- Table rows will be dynamically populated here -->
+        </tbody>
+    </table>
+    <br>
+
+    <div class="button">
+        <button id="previousBtn">Previous</button>
+        <span id="currentMonthName"></span>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        let currentMonth = new Date().getMonth();
+
+
+        function fetchExpenses() {
+            fetch(`http://localhost:3000/api/expenses?month=${currentMonth}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch expenses data.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const expensesTableBody = document.getElementById('expensesTableBody');
+                    expensesTableBody.innerHTML = ''; // Clear previous data
+                    data.forEach(expense => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${new Date(expense.date).toLocaleDateString()}</td>
+                            <td>${expense.amount}</td>
+                            <td>${expense.category}</td>
+                            <td>${expense.description}</td>
+                            <td>${expense.paymentAccount}</td>
+                        `;
+                        expensesTableBody.appendChild(row);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching expenses data:', error);
+                });
+        }
+
+        function updateCurrentMonthName() {
+            const currentMonthNameElement = document.getElementById('currentMonthName');
+            const currentDate = new Date();
+            currentDate.setMonth(currentDate.getMonth() + currentPage);
+            currentMonthNameElement.textContent = currentDate.toLocaleString('en-us', { month: 'long' });
+        }
+
+        document.getElementById('previousBtn').addEventListener('click', () => {
+            currentPage--;
+            fetchExpenses();
+            updateCurrentMonthName();
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentPage++;
+            fetchExpenses();
+            updateCurrentMonthName();
+        });
+
+        // Initial fetch and update
+        fetchExpenses();
+        updateCurrentMonthName();
+    </script>
+</body>
+
+</html>

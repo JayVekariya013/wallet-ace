@@ -24,7 +24,8 @@
         <ul class="side-menu">
             <li><a href="Dashboard.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
             <li><a href="Account.html" onclick="myaccount()"><i class='bx bx-store-alt'></i>Accounts</a></li>
-            <li class="active"><a href="split.html" onclick="mysplit()"><i class='bx bx-analyse'></i>Split Bills</a></li>
+            <li class="active"><a href="split.html" onclick="mysplit()"><i class='bx bx-analyse'></i>Split Bills</a>
+            </li>
             <li><a href="budget.html" onclick="mybudget()"><i class='bx bx-cog'></i>Analysis</a></li>
             <!-- <li><a href="#"><i class='bx bx-message-square-dots'></i>Tickets</a></li> -->
             <!-- <li><a href="profile.html" onclick="myprofile()"><i class='bx bx-group'></i>Profile</a></li> -->
@@ -108,6 +109,42 @@
                     <input type="text" id="Number2">
                 </li>
 
+            </ul>
+            <div>
+                <ul class="responsive-table">
+                    <li class="table-header">
+                        <div class="col col-1">Transaction Date</div>
+                        <div class="col col-2"> Name</div>
+                        <div class="col col-3">Total Amount </div>
+                        <div class="col col-4">Payment Status</div>
+                    </li>
+                    <li class="table-row">
+                        <div class="col col-1" data-label="Transaction Date">12/2/24</div>
+                        <div class="col col-2" data-label=" Name">Jay Patel</div>
+                        <div class="col col-3" data-label="Total Amount">350</div>
+                        <div class="col col-4" data-label="Payment Status">Done</div>
+                    </li>
+                    <li class="table-row">
+                        <div class="col col-1" data-label="Transaction Date">13/2/24</div>
+                        <div class="col col-2" data-label=" Name">Arpit Patel</div>
+                        <div class="col col-3" data-label="Total Amount">220</div>
+                        <div class="col col-4" data-label="Payment Status">Done</div>
+                    </li>
+                    <li class="table-row">
+                        <div class="col col-1" data-label="Transaction Date">15/3/24</div>
+                        <div class="col col-2" data-label=" Name">Jenil Patel</div>
+                        <div class="col col-3" data-label="Total Amount">550</div>
+                        <div class="col col-4" data-label="Payment Status">Pending</div>
+                    </li>
+                    <li class="table-row">
+                        <div class="col col-1" data-label="Transaction Date">20/3/24</div>
+                        <div class="col col-2" data-label=" Name">Pruthu Patel</div>
+                        <div class="col col-3" data-label="Total Amount">1500</div>
+                        <div class="col col-4" data-label="Payment Status">Pending</div>
+                    </li>
+                </ul>
+
+            </div>
         </main>
     </div>
 

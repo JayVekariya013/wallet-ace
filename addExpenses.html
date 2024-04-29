@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #box{
+            background-color: #ace7e9;
+            border: solid black 1px;
+            border-radius: 7px;
+            margin-top: 9%;
+            margin-left: 35%;
+            height: 60%;
+            width: 30%;
+            padding-bottom: 2%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <h2 style="text-align: center;">Add Expense</h2>
+
+        <form id="expenseForm">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" required>
+
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description">
+
+            <label for="paymentAccount">Payment Account:</label>
+            <select id="paymentAccount" name="paymentAccount" required>
+                <option value="">Select payment account...</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="Cash">Cash</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+                <!-- Add more payment account options as needed -->
+            </select>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+
+
+    <script>
+        document.getElementById("expenseForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get form data
+            const formData = new FormData(event.target);
+
+            // Create an object to store the data
+            const expenseData = {};
+            formData.forEach((value, key) => {
+                expenseData[key] = value;
+            });
+
+            // Convert date to ISO string format
+            const date = formData.get('date');
+            expenseData.date = date ? new Date(date).toISOString() : new Date().toISOString();
+
+            // Send the data to the server
+            fetch('http://localhost:3000/api/addExpense', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(expenseData)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Expense added successfully:', data);
+                    // Optionally, you can perform additional actions after adding the expense
+                })
+                .catch(error => {
+                    console.error('Error adding expense:', error);
+                });
+
+            // Clear form fields
+            event.target.reset();
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+#$$ Basic Instuctions :-
+-if you haven't installed npm in the folder then open the project folder in VisualStudio
+ and then open the terminal run below command/code ( paste in the terminal and press enter)
+ 
+	npm init -y
+
+-use the same process as above and run below code to install required library
+
+	npm install express mongoose
+	
+	npm install cors
+
+- mongoDB compass is required to installed in pc for database useage purpose
+
+- to start the server of backend ru below code in terminal
+	
+	node server.js
+
+
+#$$ Updates made :-
+- added addExpenses and graph html pages
+- server.js file added
+- config folder is added for Database connectivity
+
+#$$ Future instruction :-
+- intigrate addExpenses and graph pages in our project at proper place
+- apply css and make it beautifull
+
+#$$ ChatGPT link :- 
+https://chat.openai.com/share/947b42b0-488d-446e-b4a3-491d6b16a027

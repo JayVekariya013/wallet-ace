@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // require("dotenv").config();
 
 const dbConnect = ()=>{
-    mongoose.connect('mongodb://0.0.0.0:27017/expenses', {
+    mongoose.connect('mongodb://0.0.0.0:27017/wallet-ace', {
         useNewUrlParser:true,   
         useUnifiedTopology:true
     })

@@ -1,0 +1,526 @@
+[{
+  "_id": {
+    "$oid": "662946753786f87b2043e678"
+  },
+  "date": {
+    "$date": "2024-04-05T00:00:00.000Z"
+  },
+  "amount": 40,
+  "category": "cafe",
+  "description": "Bhadresh tea stall",
+  "paymentAccount": "Cash",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662946b93786f87b2043e680"
+  },
+  "date": {
+    "$date": "2024-04-13T00:00:00.000Z"
+  },
+  "amount": 2000,
+  "category": "event",
+  "description": "birthday party",
+  "paymentAccount": "Bank Transfer",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e6c"
+  },
+  "date": "2024-01-01T08:00:00.000Z",
+  "amount": 50,
+  "category": "Groceries",
+  "description": "Shopping at local grocery store",
+  "paymentAccount": "Debit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e6d"
+  },
+  "date": "2024-01-03T08:00:00.000Z",
+  "amount": 20,
+  "category": "Transportation",
+  "description": "Bus fare",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e6e"
+  },
+  "date": "2024-01-05T08:00:00.000Z",
+  "amount": 35,
+  "category": "Dining Out",
+  "description": "Dinner with friends",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e6f"
+  },
+  "date": "2024-01-07T08:00:00.000Z",
+  "amount": 100,
+  "category": "Utilities",
+  "description": "Electricity bill",
+  "paymentAccount": "Bank Transfer"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e70"
+  },
+  "date": "2024-01-10T08:00:00.000Z",
+  "amount": 45,
+  "category": "Entertainment",
+  "description": "Movie tickets",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e71"
+  },
+  "date": "2024-01-15T08:00:00.000Z",
+  "amount": 25,
+  "category": "Shopping",
+  "description": "Online shopping",
+  "paymentAccount": "Debit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e72"
+  },
+  "date": "2024-01-17T08:00:00.000Z",
+  "amount": 30,
+  "category": "Healthcare",
+  "description": "Medicine purchase",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e73"
+  },
+  "date": "2024-01-20T08:00:00.000Z",
+  "amount": 55,
+  "category": "Dining Out",
+  "description": "Lunch with family",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e74"
+  },
+  "date": "2024-01-22T08:00:00.000Z",
+  "amount": 40,
+  "category": "Transportation",
+  "description": "Taxi fare",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e75"
+  },
+  "date": "2024-01-25T08:00:00.000Z",
+  "amount": 65,
+  "category": "Utilities",
+  "description": "Water bill",
+  "paymentAccount": "Bank Transfer"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e76"
+  },
+  "date": "2024-01-28T08:00:00.000Z",
+  "amount": 75,
+  "category": "Entertainment",
+  "description": "Concert tickets",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e77"
+  },
+  "date": "2024-02-01T08:00:00.000Z",
+  "amount": 40,
+  "category": "Shopping",
+  "description": "Clothing purchase",
+  "paymentAccount": "Debit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e78"
+  },
+  "date": "2024-02-05T08:00:00.000Z",
+  "amount": 30,
+  "category": "Healthcare",
+  "description": "Doctor's visit",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e79"
+  },
+  "date": "2024-02-07T08:00:00.000Z",
+  "amount": 50,
+  "category": "Transportation",
+  "description": "Fuel refill",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e7a"
+  },
+  "date": "2024-02-10T08:00:00.000Z",
+  "amount": 20,
+  "category": "Dining Out",
+  "description": "Takeout dinner",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e7b"
+  },
+  "date": "2024-02-15T08:00:00.000Z",
+  "amount": 65,
+  "category": "Utilities",
+  "description": "Gas bill",
+  "paymentAccount": "Bank Transfer"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e7c"
+  },
+  "date": "2024-02-17T08:00:00.000Z",
+  "amount": 35,
+  "category": "Entertainment",
+  "description": "Game subscription",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e7d"
+  },
+  "date": "2024-02-20T08:00:00.000Z",
+  "amount": 25,
+  "category": "Groceries",
+  "description": "Weekly grocery shopping",
+  "paymentAccount": "Debit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e7e"
+  },
+  "date": "2024-02-22T08:00:00.000Z",
+  "amount": 60,
+  "category": "Shopping",
+  "description": "Electronics purchase",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e7f"
+  },
+  "date": "2024-02-25T08:00:00.000Z",
+  "amount": 45,
+  "category": "Transportation",
+  "description": "Public transit pass",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e80"
+  },
+  "date": "2024-02-28T08:00:00.000Z",
+  "amount": 70,
+  "category": "Healthcare",
+  "description": "Prescription refill",
+  "paymentAccount": "Bank Transfer"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e81"
+  },
+  "date": "2024-03-01T08:00:00.000Z",
+  "amount": 55,
+  "category": "Dining Out",
+  "description": "Birthday dinner",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e82"
+  },
+  "date": "2024-03-05T08:00:00.000Z",
+  "amount": 30,
+  "category": "Entertainment",
+  "description": "Movie tickets",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e83"
+  },
+  "date": "2024-03-07T08:00:00.000Z",
+  "amount": 40,
+  "category": "Utilities",
+  "description": "Internet bill",
+  "paymentAccount": "Bank Transfer"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e84"
+  },
+  "date": "2024-03-10T08:00:00.000Z",
+  "amount": 25,
+  "category": "Shopping",
+  "description": "Stationery purchase",
+  "paymentAccount": "Debit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e85"
+  },
+  "date": "2024-03-15T08:00:00.000Z",
+  "amount": 35,
+  "category": "Groceries",
+  "description": "Monthly grocery shopping",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e86"
+  },
+  "date": "2024-03-17T08:00:00.000Z",
+  "amount": 20,
+  "category": "Transportation",
+  "description": "Taxi fare",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e87"
+  },
+  "date": "2024-03-20T08:00:00.000Z",
+  "amount": 65,
+  "category": "Healthcare",
+  "description": "Medical checkup",
+  "paymentAccount": "Bank Transfer"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e88"
+  },
+  "date": "2024-03-22T08:00:00.000Z",
+  "amount": 45,
+  "category": "Dining Out",
+  "description": "Brunch with friends",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e89"
+  },
+  "date": "2024-03-25T08:00:00.000Z",
+  "amount": 30,
+  "category": "Entertainment",
+  "description": "Concert tickets",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662e45fb6b42f0df9b2c7e8a"
+  },
+  "date": "2024-03-28T08:00:00.000Z",
+  "amount": 50,
+  "category": "Shopping",
+  "description": "Online purchase",
+  "paymentAccount": "Debit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9430"
+  },
+  "date": "2024-02-01",
+  "amount": 550,
+  "category": "Food",
+  "description": "Groceries",
+  "paymentAccount": "Debit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9431"
+  },
+  "date": "2024-02-05",
+  "amount": 1200,
+  "category": "Transportation",
+  "description": "Fuel",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9432"
+  },
+  "date": "2024-02-10",
+  "amount": 150,
+  "category": "Entertainment",
+  "description": "Movie tickets",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9433"
+  },
+  "date": "2024-02-15",
+  "amount": 800,
+  "category": "Shopping",
+  "description": "Clothing",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9434"
+  },
+  "date": "2024-02-20",
+  "amount": 2500,
+  "category": "Rent",
+  "description": "Monthly rent",
+  "paymentAccount": "Bank Transfer"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9435"
+  },
+  "date": "2024-02-25",
+  "amount": 400,
+  "category": "Food",
+  "description": "Dining out",
+  "paymentAccount": "Debit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9436"
+  },
+  "date": "2024-03-02",
+  "amount": 1500,
+  "category": "Transportation",
+  "description": "Car maintenance",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9437"
+  },
+  "date": "2024-03-07",
+  "amount": 100,
+  "category": "Entertainment",
+  "description": "Concert tickets",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9438"
+  },
+  "date": "2024-03-12",
+  "amount": 600,
+  "category": "Shopping",
+  "description": "Electronics",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9439"
+  },
+  "date": "2024-03-17",
+  "amount": 1800,
+  "category": "Rent",
+  "description": "Monthly rent",
+  "paymentAccount": "Bank Transfer"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b943a"
+  },
+  "date": "2024-03-22",
+  "amount": 300,
+  "category": "Food",
+  "description": "Groceries",
+  "paymentAccount": "Debit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b943b"
+  },
+  "date": "2024-03-27",
+  "amount": 120,
+  "category": "Transportation",
+  "description": "Public transport",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b943c"
+  },
+  "date": "2024-04-01",
+  "amount": 700,
+  "category": "Shopping",
+  "description": "Home appliances",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b943d"
+  },
+  "date": "2024-04-05",
+  "amount": 2200,
+  "category": "Rent",
+  "description": "Monthly rent",
+  "paymentAccount": "Bank Transfer"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b943e"
+  },
+  "date": "2024-04-10",
+  "amount": 250,
+  "category": "Food",
+  "description": "Dining out",
+  "paymentAccount": "Debit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b943f"
+  },
+  "date": "2024-04-15",
+  "amount": 900,
+  "category": "Transportation",
+  "description": "Car insurance",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9440"
+  },
+  "date": "2024-04-20",
+  "amount": 80,
+  "category": "Entertainment",
+  "description": "Streaming service",
+  "paymentAccount": "Cash"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9441"
+  },
+  "date": "2024-04-25",
+  "amount": 1200,
+  "category": "Shopping",
+  "description": "Furniture",
+  "paymentAccount": "Credit Card"
+},
+{
+  "_id": {
+    "$oid": "662f1d3a26eb3b3e441b9442"
+  },
+  "date": "2024-04-30",
+  "amount": 400,
+  "category": "Food",
+  "description": "Groceries",
+  "paymentAccount": "Debit Card"
+}]
